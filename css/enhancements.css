@@ -1,0 +1,61 @@
+/* This sits on top of Olivero and changes everything instantly */
+:root {
+  /* 1. Golden orange to match demo images (#F1AC0D / #F9A238) */
+  --color--primary-hue: 42;
+  --color--primary-saturation: 90%;
+
+  /* 2. Modern Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* 3. Soften the UI (Olivero is very 'square') */
+  --border-radius: 12px;
+
+  /* 4. Warmer grays to complement the golden orange */
+  --color--gray-hue: 35;
+  --color--gray-saturation: 12%;
+
+  /* 5. Slightly tighter max width for modern feel */
+  --max-width: 78rem;
+}
+
+/* 5. Make the Header look 'Premium' */
+.site-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px); /* Modern glassmorphism */
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 6. Fix the 'Powered by Drupal' block if you're showing the footer */
+.footer-block {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* 7. Buttons - subtle shadow and smoother hover */
+.button,
+.form-submit {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+.button:hover,
+.form-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 8. Links - fun underline effect */
+.page-content a:not(.button) {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* 9. Cards/blocks - subtle depth */
+.block {
+  border-radius: var(--border-radius);
+}
+
+/* 10. Hero/banner areas - if using featured content */
+.featured-top {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}

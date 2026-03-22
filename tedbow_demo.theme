@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Tedbow Demo theme.
+ */
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * Override Olivero's color scheme with golden orange to match demo images.
+ */
+function tedbow_demo_preprocess_html(array &$variables): void {
+  // #F1AC0D converts to approximately: hue 42, saturation 89%, lightness 50%
+  $variables['html_attributes']->setAttribute('style', '--color--primary-hue:42;--color--primary-saturation:89%;--color--primary-lightness:50');
+}

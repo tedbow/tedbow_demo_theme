@@ -1,0 +1,6 @@
+name: 'Tedbow Demo Theme'
+type: theme
+base theme: olivero
+core_version_requirement: ^10 || ^11
+libraries:
+  - tedbow_demo/enhancements
