@@ -112,14 +112,11 @@ h1 {
   color: #F1AC0D;
 }
 
-/* 16. Site name/branding - make it pop */
+/* 16. Site name/branding - dark text for readability */
 .site-branding__name a {
   font-weight: 800;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #F1AC0D 0%, #F9A238 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #1a1a2e;
 }
 
 /* 17. Content area - breathing room */
