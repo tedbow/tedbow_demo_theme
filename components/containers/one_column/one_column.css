@@ -1,4 +1,11 @@
 [data-component-id="tedbow_demo:one_column"] {
+  /* Reset heading margins inside containers */
+  h1, h2, h3, h4, h5, h6,
+  [data-component-id="tedbow_demo:heading"] {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
   &.width-full {
     display: flex;
     overflow: visible;
