@@ -59,3 +59,70 @@
 .featured-top {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
+
+/* 11. Dark, cinematic footer - TV/streaming vibe */
+.site-footer {
+  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+  color: #e5e5e5;
+}
+.site-footer a {
+  color: #F1AC0D;
+}
+.site-footer a:hover {
+  color: #F9A238;
+}
+
+/* 12. Headings - bolder, tighter for entertainment feel */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+h1 {
+  font-size: 2.75rem;
+}
+
+/* 13. Images - subtle hover zoom for cards/teasers */
+.node--view-mode-teaser img,
+.views-row img {
+  transition: transform 0.3s ease;
+}
+.node--view-mode-teaser:hover img,
+.views-row:hover img {
+  transform: scale(1.03);
+}
+
+/* 14. Card containers - overflow hidden for zoom effect + shadow */
+.node--view-mode-teaser,
+.views-row {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  transition: box-shadow 0.3s ease;
+}
+.node--view-mode-teaser:hover,
+.views-row:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 15. Primary nav - sleeker */
+.primary-nav__menu-link {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.primary-nav__menu-link:hover {
+  color: #F1AC0D;
+}
+
+/* 16. Site name/branding - make it pop */
+.site-branding__name a {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #F1AC0D 0%, #F9A238 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 17. Content area - breathing room */
+.main-content {
+  padding-block: var(--sp4);
+}
