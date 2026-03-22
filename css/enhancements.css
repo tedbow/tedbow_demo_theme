@@ -293,12 +293,13 @@ tr:hover td {
   box-shadow: 0 6px 20px rgba(241, 172, 13, 0.5);
 }
 
-/* 31. Full-width hero banner - more dramatic */
+/* 31. Full-width hero banner - keep content transparent */
 .dd-hero--image-background {
   min-height: 400px;
 }
-.dd-hero--image-background .dd-hero__content {
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(26, 26, 46, 0.7) 100%);
-  padding: var(--sp3);
-  border-radius: var(--border-radius);
+
+/* 32. Side-by-side hero text padding */
+.dd-hero--image-first .dd-hero__content,
+.dd-hero--image-second .dd-hero__content {
+  padding: var(--sp2);
 }
