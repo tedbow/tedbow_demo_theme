@@ -27,14 +27,35 @@
 .dd-text td { padding: 0.75rem; }
 .dd-text tr { border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
 
-/* Blockquote */
+/* Blockquote - TV Beevy themed */
 .dd-text blockquote {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding-left: 1rem;
-  border-left: 4px solid rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  border-left: 4px solid #F1AC0D;
+  background: linear-gradient(90deg, rgba(241, 172, 13, 0.1) 0%, transparent 100%);
+  border-radius: 0 12px 12px 0;
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+}
+
+/* Headings - golden underline accent (TV Beevy theme) */
+.dd-text h2 {
+  color: #1a1a2e;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.dd-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #F1AC0D 0%, #F9A238 100%);
+  border-radius: 2px;
 }
 
 /* Figures */

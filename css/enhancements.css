@@ -229,24 +229,7 @@ tr:hover td {
   letter-spacing: -0.03em;
 }
 
-/* 27. dd-hero component enhancements */
-.dd-hero {
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  margin-bottom: var(--sp3);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-.dd-hero__img {
-  transition: transform 0.4s ease;
-}
-.dd-hero:hover .dd-hero__img {
-  transform: scale(1.02);
-}
-.dd-hero__content {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* 28. Section spacing and alternating backgrounds */
+/* 27. Section spacing and alternating backgrounds */
 .canvas-component-wrapper {
   padding: var(--sp3) 0;
 }
@@ -254,16 +237,13 @@ tr:hover td {
   background: rgba(241, 172, 13, 0.03);
 }
 
-/* 29. Content section headings (h2, h3 in content) */
-.dd-text h2,
-.dd-hero__content h2,
+/* 28. Page content headings - golden underline accent */
 .page-content h2 {
   color: #1a1a2e;
   font-weight: 700;
   position: relative;
   display: inline-block;
 }
-.dd-text h2::after,
 .page-content h2::after {
   content: '';
   position: absolute;
@@ -273,33 +253,4 @@ tr:hover td {
   height: 3px;
   background: linear-gradient(90deg, #F1AC0D 0%, #F9A238 100%);
   border-radius: 2px;
-}
-
-/* 30. dd-button - make it pop with brand colors */
-.dd-button {
-  background: linear-gradient(135deg, #F1AC0D 0%, #F9A238 100%);
-  color: #1a1a2e;
-  font-weight: 700;
-  border: none;
-  padding: 0.75em 1.5em;
-  border-radius: 2em;
-  box-shadow: 0 4px 15px rgba(241, 172, 13, 0.4);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-.dd-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(241, 172, 13, 0.5);
-}
-
-/* 31. Full-width hero banner - keep content transparent */
-.dd-hero--image-background {
-  min-height: 400px;
-}
-
-/* 32. Side-by-side hero text padding */
-.dd-hero--image-first .dd-hero__content,
-.dd-hero--image-second .dd-hero__content {
-  padding: var(--sp2);
 }

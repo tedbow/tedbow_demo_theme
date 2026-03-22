@@ -41,15 +41,17 @@
   font-size: 18px;
 }
 
-/* Primary - Blue background, white text */
+/* Primary - Golden gradient (TV Beevy theme) */
 .dd-button--primary {
-  background-color: #2563eb;
-  color: #ffffff;
+  background: linear-gradient(135deg, #F1AC0D 0%, #F9A238 100%);
+  color: #1a1a2e;
+  box-shadow: 0 4px 15px rgba(241, 172, 13, 0.4);
 }
 
 .dd-button--primary:hover {
-  background-color: #1d4ed8;
-  color: #ffffff;
+  background: linear-gradient(135deg, #F9A238 0%, #F1AC0D 100%);
+  color: #1a1a2e;
+  box-shadow: 0 6px 20px rgba(241, 172, 13, 0.5);
 }
 
 /* Secondary - Light gray with dark text */
