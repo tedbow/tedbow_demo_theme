@@ -1,0 +1,55 @@
+$schema: "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: DD Button
+group: Demo
+status: stable
+props:
+  type: object
+  required:
+    - variant
+    - size
+  properties:
+    variant:
+      type: string
+      title: Style
+      enum:
+        - primary
+        - secondary
+        - primary-inverted
+        - secondary-inverted
+      meta:enum:
+        primary: Primary
+        secondary: Secondary
+        primary-inverted: Primary inverted
+        secondary-inverted: Secondary inverted
+      examples:
+        - primary
+    label:
+      type: string
+      title: Label
+      default: "Button label"
+      examples:
+        - "Button label"
+    href:
+      type: string
+      title: Link
+      format: uri-reference
+    size:
+      type: string
+      title: Button size
+      enum:
+        - small
+        - medium
+        - large
+      meta:enum:
+        small: Small
+        medium: Medium
+        large: Large
+      examples:
+        - medium
+    disabled:
+      type: boolean
+      title: Disabled
+      default: false
+      examples:
+        - false
+        - true

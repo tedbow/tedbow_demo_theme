@@ -1,0 +1,38 @@
+{% set image_position = image_position|default('first', true) %}
+{% set ratio = ratio|default('auto', true) %}
+{% set loading = loading|default('lazy', true) %}
+{% set content_position = content_position|default('center', true) %}
+{% set content_width = content_width|default('full', true) %}
+{% set text_treatment = text_treatment|default('none', true) %}
+{% set aspectRatio = null %}
+
+{% if ratio != 'auto' %}
+  {% set ratioParts = ratio|split('/') %}
+  {% set aspectRatio = ratioParts[0] ~ ' / ' ~ ratioParts[1] %}
+{% endif %}
+
+{% set imageMarkup %}
+  <div class="dd-hero__image"{% if aspectRatio %} style="aspect-ratio: {{ aspectRatio }};"{% endif %}>
+    {% if link %}<a href="{{ link }}" class="dd-hero__image-link">{% endif %}
+    <img
+      class="dd-hero__img"
+      src="{{ image.src }}"
+      alt="{{ image.alt }}"
+      {% if image.width %}width="{{ image.width }}"{% endif %}
+      {% if image.height %}height="{{ image.height }}"{% endif %}
+      loading="{{ loading }}"
+    />
+    {% if link %}</a>{% endif %}
+  </div>
+{% endset %}
+
+<div class="dd-hero dd-hero--image-{{ image_position }}">
+  {% if image_position == 'first' %}{{ imageMarkup }}{% endif %}
+  {% if image_position == 'background' %}{{ imageMarkup }}{% endif %}
+
+  <div class="dd-hero__content dd-hero__content--{{ content_position }} dd-hero__content--{{ content_width }}{% if text_treatment != 'none' %} dd-hero__content--{{ text_treatment }}{% endif %}">
+    {% block body %}{% endblock %}
+  </div>
+
+  {% if image_position == 'second' %}{{ imageMarkup }}{% endif %}
+</div>

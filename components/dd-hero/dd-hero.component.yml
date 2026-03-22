@@ -1,0 +1,132 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Hero
+description: A hero component with an image and content slot
+props:
+  type: object
+  required:
+    - image
+    - image_position
+    - content_width
+    - ratio
+    - content_position
+  properties:
+    image:
+      title: 'Image'
+      $ref: json-schema-definitions://canvas.module/image
+      # @todo `type: object` should not be necessary, it's because \Drupal\sdc\Component\ComponentValidator::getClassProps() does not yet support $ref
+      type: object
+      examples:
+        - src: 600x400.png
+          alt: 'Boring placeholder'
+          width: 600
+          height: 400
+    image_position:
+      title: Image Position
+      description: Controls where the image is placed relative to the content
+      type: string
+      enum:
+        - first
+        - second
+        - background
+      meta:enum:
+        first: Image First
+        second: Image Second
+        background: Background
+      default: first
+      examples:
+        - first
+    ratio:
+      title: Aspect Ratio
+      description: Aspect ratio constraint for the image
+      type: string
+      enum:
+        - auto
+        - 16/9
+        - 4/3
+        - 3/2
+        - 1/1
+      meta:enum:
+        auto: Auto
+        16/9: '16:9'
+        4/3: '4:3'
+        3/2: '3:2'
+        1/1: Square (1:1)
+      default: auto
+      examples:
+        - 16/9
+    loading:
+      title: Loading Strategy
+      description: Image loading attribute for performance
+      type: string
+      enum:
+        - lazy
+        - eager
+      meta:enum:
+        lazy: Lazy
+        eager: Eager
+      default: lazy
+    link:
+      title: Link
+      description: Optional URL to wrap the image in an anchor tag
+      type: string
+      format: uri-reference
+      examples:
+        - https://example.com
+    content_position:
+      title: Content Position
+      description: Position of the content slot within the component (primarily affects background mode)
+      type: string
+      enum:
+        - center
+        - top-left
+        - top-center
+        - top-right
+        - bottom-left
+        - bottom-center
+        - bottom-right
+      meta:enum:
+        center: Center
+        top-left: Top Left
+        top-center: Top Center
+        top-right: Top Right
+        bottom-left: Bottom Left
+        bottom-center: Bottom Center
+        bottom-right: Bottom Right
+      default: center
+      examples:
+        - center
+    content_width:
+      title: Content Width
+      description: Width of the content slot
+      type: string
+      enum:
+        - full
+        - three-quarters
+        - half
+        - one-third
+      meta:enum:
+        full: Full
+        three-quarters: Three Quarters
+        half: Half
+        one-third: One Third
+      default: full
+      examples:
+        - full
+    text_treatment:
+      title: Text Treatment
+      description: Applies a shadow to content text to improve readability over an uncluttered image area, without affecting the image itself
+      type: string
+      enum:
+        - light-shadow
+        - medium-shadow
+        - heavy-shadow
+      meta:enum:
+        light-shadow: Light Shadow
+        medium-shadow: Medium Shadow
+        heavy-shadow: Heavy Shadow
+slots:
+  body:
+    title: Content
+    description: The content to display alongside the image (e.g. heading, text, CTA)
+    examples:
+      - <h2>Welcome to our site</h2><p>Discover what we have to offer.</p>

@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Optional Section
+description: Conditionally renders a slot based on the show prop
+props:
+  type: object
+  properties:
+    show:
+      title: Show
+      description: When true, the slot content is rendered
+      type: boolean
+      examples:
+        - true
+slots:
+  body:
+    title: Body
+    description: The content to conditionally render
+    examples:
+      - <p>This content is conditionally shown.</p>

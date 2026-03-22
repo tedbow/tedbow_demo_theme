@@ -1,0 +1,22 @@
+.dd-label-value {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.dd-label-value__label {
+  font-weight: bold;
+}
+
+.dd-label-value__label::after {
+  content: ':';
+}
+
+.dd-label-value__value {
+  margin: 0;
+}
+
+.dd-label-value__link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

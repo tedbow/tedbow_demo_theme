@@ -1,0 +1,31 @@
+{% set button_variant = variant|default('primary') %}
+{% set button_size = size|default('medium') %}
+{% set is_disabled = disabled|default(false) %}
+{% set button_label = label|default('Button label') %}
+
+{% set button_classes = [
+  'dd-button',
+  'dd-button--' ~ button_variant,
+  'dd-button--' ~ button_size,
+  is_disabled ? 'dd-button--disabled' : ''
+]|filter(v => v is not empty)|join(' ') %}
+
+{# If href is provided and button is not disabled, present a link; otherwise render a button #}
+{% set href = is_disabled ? null : href %}
+
+{% if href %}
+  <a
+    href="{{ href }}"
+    class="{{ button_classes }}"
+    {% if is_disabled %}aria-disabled="true"{% endif %}
+  >
+    {{ button_label }}
+  </a>
+{% else %}
+  <button
+    class="{{ button_classes }}"
+    {% if is_disabled %}disabled{% endif %}
+  >
+    {{ button_label }}
+  </button>
+{% endif %}

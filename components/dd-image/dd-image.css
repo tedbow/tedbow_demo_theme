@@ -1,0 +1,52 @@
+.dd-image {
+  display: block;
+  overflow: hidden;
+}
+
+.dd-image--ratio-auto {
+  /* Default responsive behavior */
+}
+
+.dd-image--ratio-16-9,
+.dd-image--ratio-4-3,
+.dd-image--ratio-3-2,
+.dd-image--ratio-1-1 {
+  position: relative;
+}
+
+.dd-image--ratio-16-9::before,
+.dd-image--ratio-4-3::before,
+.dd-image--ratio-3-2::before,
+.dd-image--ratio-1-1::before {
+  content: '';
+  display: block;
+  padding-bottom: var(--aspect-ratio-percent, 100%);
+}
+
+.dd-image__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.dd-image__link {
+  display: block;
+}
+
+.dd-image__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.dd-image--ratio-16-9 .dd-image__img,
+.dd-image--ratio-4-3 .dd-image__img,
+.dd-image--ratio-3-2 .dd-image__img,
+.dd-image--ratio-1-1 .dd-image__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

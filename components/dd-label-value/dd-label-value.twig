@@ -1,0 +1,10 @@
+<dl class="dd-label-value">
+  <dt class="dd-label-value__label">{{ label }}</dt>
+  <dd class="dd-label-value__value">
+    {% if link %}
+      <a href="{{ link }}" class="dd-label-value__link">{{ value }}</a>
+    {% else %}
+      {{ value }}
+    {% endif %}
+  </dd>
+</dl>

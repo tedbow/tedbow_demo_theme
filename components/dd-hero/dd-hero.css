@@ -1,0 +1,101 @@
+.dd-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Image second: move content before image in the grid */
+.dd-hero--image-second .dd-hero__content {
+  order: -1;
+}
+
+/* Background: stack image behind content using grid overlap */
+.dd-hero--image-background {
+  grid-template-columns: 1fr;
+  position: relative;
+}
+
+.dd-hero--image-background .dd-hero__image,
+.dd-hero--image-background .dd-hero__content {
+  grid-area: 1 / 1;
+}
+
+.dd-hero--image-background .dd-hero__image {
+  z-index: 0;
+}
+
+.dd-hero--image-background .dd-hero__content {
+  z-index: 1;
+  padding: 2rem;
+}
+
+/* Content position — align-self / justify-self within the grid cell */
+.dd-hero__content--center        { align-self: center; justify-self: center; }
+.dd-hero__content--top-left      { align-self: start;  justify-self: start;  }
+.dd-hero__content--top-center    { align-self: start;  justify-self: center; }
+.dd-hero__content--top-right     { align-self: start;  justify-self: end;    }
+.dd-hero__content--bottom-left   { align-self: end;    justify-self: start;  }
+.dd-hero__content--bottom-center { align-self: end;    justify-self: center; }
+.dd-hero__content--bottom-right  { align-self: end;    justify-self: end;    }
+
+/* Content width */
+.dd-hero__content--full          { width: 100%; }
+.dd-hero__content--three-quarters { width: 75%; }
+.dd-hero__content--half          { width: 50%; }
+.dd-hero__content--one-third     { width: 33.333%; }
+
+.dd-hero__image {
+  overflow: hidden;
+}
+
+.dd-hero__image-link {
+  display: block;
+}
+
+.dd-hero__image-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.dd-hero__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.dd-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Remove default element margins so gap alone controls spacing */
+.dd-hero__content > * {
+  margin: 0;
+}
+
+/* Text treatments: shadow applied to content text for readability over background images */
+.dd-hero__content--light-shadow * {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dd-hero__content--medium-shadow * {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dd-hero__content--heavy-shadow * {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 2px 12px rgba(0, 0, 0, 0.7), 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .dd-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .dd-hero--image-second .dd-hero__content {
+    order: 0;
+  }
+}

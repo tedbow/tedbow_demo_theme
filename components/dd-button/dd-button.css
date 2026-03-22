@@ -1,0 +1,97 @@
+.dd-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dd-button:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dd-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Size variants */
+.dd-button--small {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.dd-button--medium {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.dd-button--large {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+/* Primary - Blue background, white text */
+.dd-button--primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.dd-button--primary:hover {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+/* Secondary - Light gray with dark text */
+.dd-button--secondary {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.dd-button--secondary:hover {
+  background-color: #d1d5db;
+  color: #1f2937;
+}
+
+/* Primary inverted - White with blue text */
+.dd-button--primary-inverted {
+  background-color: #ffffff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.dd-button--primary-inverted:hover {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+/* Secondary inverted - Dark with light text */
+.dd-button--secondary-inverted {
+  background-color: #1f2937;
+  color: #ffffff;
+  border: 2px solid #374151;
+}
+
+.dd-button--secondary-inverted:hover {
+  background-color: #374151;
+  color: #ffffff;
+}
+
+/* Disabled state */
+.dd-button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}

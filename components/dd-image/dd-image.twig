@@ -1,0 +1,21 @@
+{% set ratio = ratio|default('auto') %}
+{% set loading = loading|default('lazy') %}
+{% set paddingBottom = null %}
+
+{% if ratio != 'auto' %}
+  {% set ratioParts = ratio|split('/') %}
+  {% set paddingBottom = (ratioParts[1] / ratioParts[0] * 100)|round(2) %}
+{% endif %}
+
+<div class="dd-image{% if ratio != 'auto' %} dd-image--ratio-{{ ratio|replace({'/': '-'}) }}{% endif %}"{% if paddingBottom %} style="--aspect-ratio-percent: {{ paddingBottom }}%;"{% endif %}>
+  {% if link %}<a href="{{ link }}" class="dd-image__link">{% endif %}
+  <img
+    class="dd-image__img"
+    src="{{ image.src }}"
+    alt="{{ image.alt }}"
+    {% if image.width %}width="{{ image.width }}"{% endif %}
+    {% if image.height %}height="{{ image.height }}"{% endif %}
+    loading="{{ loading }}"
+  />
+  {% if link %}</a>{% endif %}
+</div>

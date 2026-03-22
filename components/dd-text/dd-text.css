@@ -1,0 +1,57 @@
+.dd-text {
+  /* Reset first/last child margins for clean composition */
+}
+
+.dd-text > *:first-child { margin-top: 0; }
+.dd-text > *:last-child { margin-bottom: 0; }
+
+/* Headings */
+.dd-text h2 { margin-top: 2rem; margin-bottom: 1.5rem; }
+.dd-text h3 { margin-top: 1.5rem; margin-bottom: 1rem; }
+.dd-text h4 { margin-top: 1rem; margin-bottom: 0.5rem; }
+.dd-text h5,
+.dd-text h6 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+
+/* Lists */
+.dd-text ul,
+.dd-text ol { margin-top: 1rem; margin-bottom: 1rem; }
+.dd-text ol { list-style-type: decimal; }
+.dd-text li { margin-bottom: 0.25rem; }
+
+/* Links */
+.dd-text a { text-decoration: underline; text-underline-offset: 2px; }
+
+/* Tables */
+.dd-text table { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.dd-text th,
+.dd-text td { padding: 0.75rem; }
+.dd-text tr { border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+
+/* Blockquote */
+.dd-text blockquote {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid rgba(0, 0, 0, 0.15);
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+/* Figures */
+.dd-text figure { margin-top: 1.5rem; margin-bottom: 1.5rem; width: fit-content; }
+.dd-text figcaption {
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.75rem;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* Size variants */
+.dd-text--xs { font-size: 0.75rem; }
+.dd-text--sm { font-size: 0.875rem; }
+.dd-text--normal { font-size: 1rem; }
+.dd-text--lg { font-size: 1.125rem; }
+.dd-text--xl { font-size: 1.25rem; }
+.dd-text--2xl { font-size: 1.5rem; }
+.dd-text--3xl { font-size: 2rem; }

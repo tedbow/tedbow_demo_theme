@@ -1,0 +1,54 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Image
+description: A responsive image component with aspect ratio support
+props:
+  type: object
+  required:
+    - image
+  properties:
+
+    image:
+      title: 'Image'
+      $ref: json-schema-definitions://canvas.module/image
+      # @todo `type: object` should not be necessary, it's because \Drupal\sdc\Component\ComponentValidator::getClassProps() does not yet support $ref
+      type: object
+      examples:
+        - src: 600x400.png
+          alt: 'Boring placeholder'
+          width: 600
+          height: 400
+    ratio:
+      title: Aspect Ratio
+      description: Aspect ratio constraint (16/9, 4/3, 1/1, etc.)
+      type: string
+      enum:
+        - auto
+        - 16/9
+        - 4/3
+        - 3/2
+        - 1/1
+      meta:enum:
+        auto: Auto
+        16/9: '16:9'
+        4/3: '4:3'
+        3/2: '3:2'
+        1/1: Square (1:1)
+      default: auto
+      examples:
+        - 16/9
+    loading:
+      title: Loading Strategy
+      description: Image loading attribute for performance
+      type: string
+      enum:
+        - lazy
+        - eager
+      meta:enum:
+        lazy: Lazy
+        eager: Eager
+      default: lazy
+    link:
+      description: Optional URL to wrap the image in an anchor tag
+      type: string
+      title: Link
+      format: uri-reference

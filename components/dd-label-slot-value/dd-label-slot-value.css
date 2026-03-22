@@ -1,0 +1,17 @@
+.dd-label-slot-value {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.dd-label-slot-value__label {
+  font-weight: bold;
+}
+
+.dd-label-slot-value__label::after {
+  content: ':';
+}
+
+.dd-label-slot-value__value {
+  margin: 0;
+}
