@@ -126,3 +126,90 @@ h1 {
 .main-content {
   padding-block: var(--sp4);
 }
+
+/* 18. Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 19. Form inputs - modern feel */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea,
+select {
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color--gray-70);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #F1AC0D;
+  box-shadow: 0 0 0 3px rgba(241, 172, 13, 0.2);
+  outline: none;
+}
+
+/* 20. Tags/taxonomy - pill style */
+.field--name-field-tags a,
+.taxonomy-term a {
+  background: linear-gradient(135deg, #F1AC0D 0%, #F9A238 100%);
+  color: #1a1a2e;
+  padding: 0.25em 0.75em;
+  border-radius: 2em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.25em;
+  transition: transform 0.2s ease;
+}
+.field--name-field-tags a:hover,
+.taxonomy-term a:hover {
+  transform: scale(1.05);
+}
+
+/* 21. Blockquotes - TV review/quote style */
+blockquote {
+  border-left: 4px solid #F1AC0D;
+  background: linear-gradient(90deg, rgba(241, 172, 13, 0.1) 0%, transparent 100%);
+  padding: var(--sp2);
+  margin: var(--sp2) 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* 22. Pagination - cleaner */
+.pager__item a {
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+}
+.pager__item--active a {
+  background: linear-gradient(135deg, #F1AC0D 0%, #F9A238 100%);
+  color: #1a1a2e;
+}
+
+/* 23. Messages - softer alerts */
+.messages {
+  border-radius: var(--border-radius);
+  border-left-width: 4px;
+}
+
+/* 24. Tables - cleaner look */
+table {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+th {
+  background: #1a1a2e;
+  color: #fff;
+}
+tr:hover td {
+  background: rgba(241, 172, 13, 0.05);
+}
+
+/* 25. Selection highlight - brand color */
+::selection {
+  background: rgba(241, 172, 13, 0.3);
+}
