@@ -213,3 +213,92 @@ tr:hover td {
 ::selection {
   background: rgba(241, 172, 13, 0.3);
 }
+
+/* =============================================
+   TV BEEVY SPECIFIC STYLES
+   ============================================= */
+
+/* 26. Page title - golden gradient like site name */
+.page-title {
+  background: linear-gradient(135deg, #F1AC0D 0%, #F9A238 50%, #F1AC0D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+}
+
+/* 27. dd-hero component enhancements */
+.dd-hero {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: var(--sp3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.dd-hero__img {
+  transition: transform 0.4s ease;
+}
+.dd-hero:hover .dd-hero__img {
+  transform: scale(1.02);
+}
+.dd-hero__content {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 28. Section spacing and alternating backgrounds */
+.canvas-component-wrapper {
+  padding: var(--sp3) 0;
+}
+.canvas-component-wrapper:nth-child(even) {
+  background: rgba(241, 172, 13, 0.03);
+}
+
+/* 29. Content section headings (h2, h3 in content) */
+.dd-text h2,
+.dd-hero__content h2,
+.page-content h2 {
+  color: #1a1a2e;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+.dd-text h2::after,
+.page-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #F1AC0D 0%, #F9A238 100%);
+  border-radius: 2px;
+}
+
+/* 30. dd-button - make it pop with brand colors */
+.dd-button {
+  background: linear-gradient(135deg, #F1AC0D 0%, #F9A238 100%);
+  color: #1a1a2e;
+  font-weight: 700;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 2em;
+  box-shadow: 0 4px 15px rgba(241, 172, 13, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.dd-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(241, 172, 13, 0.5);
+}
+
+/* 31. Full-width hero banner - more dramatic */
+.dd-hero--image-background {
+  min-height: 400px;
+}
+.dd-hero--image-background .dd-hero__content {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(26, 26, 46, 0.7) 100%);
+  padding: var(--sp3);
+  border-radius: var(--border-radius);
+}
