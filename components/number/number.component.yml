@@ -1,0 +1,11 @@
+name: Number
+status: stable
+props:
+  type: object
+  properties:
+    number:
+      type: number
+      title: Number
+      description: The number to display
+      examples:
+        - 42
