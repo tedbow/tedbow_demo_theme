@@ -1,0 +1,37 @@
+name: Cast Member
+status: stable
+props:
+  type: object
+  required:
+    - image
+    - actor_name
+    - character_name
+  properties:
+    image:
+      title: 'Image'
+      $ref: json-schema-definitions://canvas.module/image
+      description: A photo of the cast member
+      # @todo `type: object` should not be necessary, it's because \Drupal\sdc\Component\ComponentValidator::getClassProps() does not yet support $ref
+      type: object
+      examples:
+        - src: gracie-judging.jpg
+          alt: 'Gracie judging you'
+          width: 600
+          height: 400
+    actor_name:
+      type: string
+      title: Actor Name
+      description: The actor's real name
+      examples:
+        - Gracie
+    character_name:
+      type: string
+      title: Character Name
+      description: The character they play
+      examples:
+        - Lassie
+    link:
+      type: string
+      format: uri-reference
+      title: Link URL
+      description: Optional link to actor/character page

@@ -1,0 +1,22 @@
+{% set tag = link ? 'a' : 'div' %}
+{% set link_attrs = link ? 'href="' ~ link ~ '"' : '' %}
+
+<{{ tag }} class="cast-member" {{ link_attrs|raw }}>
+  <figure class="cast-member__figure">
+    <div class="cast-member__image-wrapper">
+      <img
+        src="{{ image.src }}"
+        alt="{{ actor_name }} as {{ character_name }}"
+        class="cast-member__image"
+        {% if image.width %}width="{{ image.width }}"{% endif %}
+        {% if image.height %}height="{{ image.height }}"{% endif %}
+        loading="lazy"
+      >
+    </div>
+    <figcaption class="cast-member__info">
+      <h3 class="cast-member__actor">{{ actor_name }}</h3>
+      <span class="cast-member__as">as</span>
+      <p class="cast-member__character">{{ character_name }}</p>
+    </figcaption>
+  </figure>
+</{{ tag }}>
